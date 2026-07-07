@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agenthub.dev/agent-card-v1",
+  "description": "AgentHub Agent 身份卡模板 - 新 Agent 注册时使用",
+
+  "id": "string (必填: 唯一ID，如 dev-agent/custom/my-bot)",
+  "signature": "string (必填: 署名格式，如 [dev]，默认 [id])",
+  "display_name": "string (必填: 人类可读名字，如 Dev Agent)",
+
+  "type": "string (必填: router|specialist|general|dev|life|ops|productivity|other)",
+
+  "first_seen": "ISO8601 timestamp (必填: 首次出现时间)",
+  "last_active": "ISO8601 timestamp (必填: 最后活跃时间)",
+
+  "capabilities": ["array (必填: Agent 能力列表，如 coding/memory/scheduling)"],
+
+  "platform": "string (必填: 运行平台，如 opencode/claude-code/custom)",
+
+  "status": "string (必填: active|inactive)",
+
+  "metadata": {
+    "model": "string (可选: AI模型)",
+    "provider": "string (可选: 模型提供商)",
+    "version": "string (可选: Agent版本)"
+  },
+
+  "note": "string (可选: 备注说明)",
+
+  "preferred_memory_levels": {
+    "working": "L1 (可选: 默认工作记忆级别)",
+    "project": "L2 (可选: 默认项目记忆级别)",
+    "permanent": "L3 (可选: 默认永久记忆级别)"
+  },
+
+  "signaturing_rules": {
+    "use_signature": true,
+    "signature_placement": "start",
+    "append_to_every_response": true
+  }
+}

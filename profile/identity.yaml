@@ -1,0 +1,28 @@
+# 用户身份信息模板
+# 复制此文件并填入你的信息
+
+name: "[你的姓名]"
+email: "[你的邮箱]"
+role: "[你的角色/职业]"
+organization: "[你的组织/公司]"
+
+# 偏好设置
+preferences:
+  - "[偏好1]"
+  - "[偏好2]"
+  - "[偏好3]"
+
+# 技能标签
+skills:
+  - "[技能1]"
+  - "[技能2]"
+
+# 社交账号（可选）
+social:
+  github: "[GitHub用户名]"
+  twitter: "[Twitter用户名]"
+
+# 其他信息
+metadata:
+  created_at: "[创建时间]"
+  updated_at: "[更新时间]"

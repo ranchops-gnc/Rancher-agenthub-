@@ -1,0 +1,68 @@
+---
+name: 用户名
+alias:
+  - "昵称"
+
+basic:
+  gender: 男/女
+  birth: 2000-01-01
+  age: 25
+  phone: 138xxxxxxx
+  email: user@example.com
+  location: 城市
+  native_language: 普通话
+
+contact:
+  phone: 138xxxxxxx
+  email: user@example.com
+  qq: 123456
+  wechat: wechat_id
+
+online:
+  blog: https://example.com
+  github: https://github.com/username
+
+school:
+  name: 学校名称
+  college: 学院
+  major: 专业
+  class: 班级
+  student_id: 学号
+  duration: 2020.9 - 2024.7
+
+tech_stack:
+  python: ⭐⭐⭐⭐ 熟练
+  javascript: ⭐⭐⭐ 中级
+
+awards:
+  - 奖项1
+  - 奖项2
+
+certificates:
+  - 证书1
+  - 证书2
+
+personality:
+  traits:
+    - 特质1
+    - 特质2
+  communication_style: 直接
+  mbti: INFP
+
+preferences:
+  aesthetic:
+    primary_color: "#c45d2c"
+    secondary_color: "#e8a838"
+    forbidden_colors:
+      - "蓝紫渐变"
+  response_style:
+    emoji: true
+    language: zh-CN
+
+ai_assistant:
+  name: 小X
+  style: 温暖/专业/朋友风格
+  emoji: 🌸
+  taboo: "不做过度的寒暄"
+
+updated: 2026-04-27

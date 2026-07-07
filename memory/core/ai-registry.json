@@ -1,0 +1,69 @@
+{
+  "tools": {
+    "xavier": {
+      "name": "Xavier",
+      "config_path": "C:\\Users\\Chatxavier\\.xavier",
+      "skills_path": "C:\\Users\\Chatxavier\\.xavier\\skills",
+      "capabilities": {
+        "subagents": ["main-agent", "dev-agent", "life-agent", "ops-agent", "productivity-agent"],
+        "memory_system": true,
+        "skills": true,
+        "gateway": true,
+        "channels": ["cli", "feishu", "wechat"]
+      },
+      "last_updated": "2026-05-04"
+    },
+    "dev-agent": {
+      "name": "Dev Agent",
+      "config_path": "C:\\Users\\Chatxavier\\.xavier\\agents\\dev-agent",
+      "skills_path": "C:\\Users\\Chatxavier\\.xavier\\skills",
+      "capabilities": {
+        "subagents": [],
+        "memory_system": true,
+        "skills": true,
+        "gateway": false,
+        "channels": ["cli"]
+      },
+      "last_updated": "2026-05-04"
+    },
+    "life-agent": {
+      "name": "Life Agent",
+      "config_path": "C:\\Users\\Chatxavier\\.xavier\\agents\\life-agent",
+      "skills_path": "C:\\Users\\Chatxavier\\.xavier\\skills",
+      "capabilities": {
+        "subagents": [],
+        "memory_system": true,
+        "skills": true,
+        "gateway": false,
+        "channels": ["cli"]
+      },
+      "last_updated": "2026-05-04"
+    },
+    "ops-agent": {
+      "name": "Ops Agent",
+      "config_path": "C:\\Users\\Chatxavier\\.xavier\\agents\\ops-agent",
+      "skills_path": "C:\\Users\\Chatxavier\\.xavier\\skills",
+      "capabilities": {
+        "subagents": [],
+        "memory_system": true,
+        "skills": true,
+        "gateway": false,
+        "channels": ["cli"]
+      },
+      "last_updated": "2026-05-04"
+    },
+    "productivity-agent": {
+      "name": "Productivity Agent",
+      "config_path": "C:\\Users\\Chatxavier\\.xavier\\agents\\productivity-agent",
+      "skills_path": "C:\\Users\\Chatxavier\\.xavier\\skills",
+      "capabilities": {
+        "subagents": [],
+        "memory_system": true,
+        "skills": true,
+        "gateway": false,
+        "channels": ["cli"]
+      },
+      "last_updated": "2026-05-04"
+    }
+  }
+}

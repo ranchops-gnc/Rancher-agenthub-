@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Runtime & User Data (never commit)
+runtime/
+secrets/
+!.secrets/README.md
+!.secrets/*.example
+
+# macOS
+.DS_Store
+
+# 开发文件夹（不提交 Git）
+dev/
+
+# 开发文档（不提交 Git）
+开发计划书.md
+README-dev.md
+
+# SQLite
+*.db
+*.sqlite
+
+# Environment
+.env
+.env.local
+.obsidian/

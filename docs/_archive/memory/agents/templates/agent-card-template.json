@@ -1,0 +1,11 @@
+{
+  "id": "[agent-id]",
+  "signature": "[agent-id]",
+  "display_name": "Agent Name",
+  "type": "general",
+  "first_seen": "2026-04-27T00:00:00Z",
+  "last_active": "2026-04-27T00:00:00Z",
+  "capabilities": ["memory", "skill"],
+  "platform": "agenthub",
+  "status": "active"
+}

@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "last_updated": "[更新时间]",
+  "description": "AgentHub 模型配置 - 持久化模型设置",
+  "default_model": {
+    "name": "[模型名称]",
+    "id": "[模型ID]",
+    "provider": "[Provider名称]",
+    "type": "chat",
+    "max_tokens": 8192,
+    "temperature": 0.7
+  },
+  "models": {
+    "[模型名称]": {
+      "name": "[模型名称]",
+      "id": "[模型ID]",
+      "provider": "[Provider名称]",
+      "type": "chat",
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "description": "[模型描述]",
+      "capabilities": ["general", "coding", "analysis", "creative"]
+    }
+  },
+  "settings": {
+    "auto_load_default": true,
+    "fallback_model": "[备用模型]",
+    "timeout": 30000,
+    "retry_attempts": 3
+  }
+}
