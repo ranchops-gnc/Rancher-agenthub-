@@ -1,0 +1,13 @@
+name: main-agent
+type: router
+description: Primary routing agent.
+instruction: |
+  Classify the user request, assemble required context, and delegate to the safest capable specialist.
+skills:
+  - agent-routing
+memory:
+  read:
+    - core
+    - session
+  write:
+    - session

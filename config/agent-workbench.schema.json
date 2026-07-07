@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agenthub.local/schemas/agent-workbench.schema.json",
+  "title": "AgentHub Workbench Configuration",
+  "type": "object",
+  "required": ["version", "workspace", "agents"],
+  "properties": {
+    "version": {"type": "string"},
+    "workspace": {"type": "object", "required": ["name"], "properties": {"name": {"type": "string"}, "description": {"type": "string"}}},
+    "providers": {"type": "array", "items": {"$ref": "#/$defs/provider"}},
+    "tools": {"type": "array", "items": {"$ref": "#/$defs/tool"}},
+    "agents": {"type": "array", "items": {"$ref": "#/$defs/agent"}}
+  },
+  "$defs": {
+    "provider": {"type": "object", "required": ["name", "type"], "properties": {"name": {"type": "string"}, "type": {"type": "string"}, "models": {"type": "array", "items": {"type": "string"}}}},
+    "tool": {"type": "object", "required": ["name", "type"], "properties": {"name": {"type": "string"}, "type": {"enum": ["mcp", "http", "local"]}, "capabilities": {"type": "array", "items": {"type": "string"}}}},
+    "agent": {"type": "object", "required": ["name", "type", "instruction"], "properties": {"name": {"type": "string"}, "type": {"enum": ["router", "specialist"]}, "instruction": {"type": "string"}, "skills": {"type": "array", "items": {"type": "string"}}, "tools": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

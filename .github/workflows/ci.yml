@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install API package
+        run: pip install -e apps/api
+      - name: Import API
+        run: python -c "from agenthub.main import app; print(app.title)"
+      - name: Validate schema JSON
+        run: python -m json.tool config/agent-workbench.schema.json >/dev/null

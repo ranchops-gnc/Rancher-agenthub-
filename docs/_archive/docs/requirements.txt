@@ -1,7 +1,0 @@
-# AgentHub Core Dependencies
-pyyaml>=6.0
-semver>=3.0
-
-# Development Dependencies
-pytest>=7.0
-pytest-cov>=4.0
