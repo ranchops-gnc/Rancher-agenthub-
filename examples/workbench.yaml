@@ -1,0 +1,34 @@
+version: "0.1"
+workspace:
+  name: "ranchops-default"
+  description: "Default AgentHub workspace"
+
+providers:
+  - name: openai-primary
+    type: openai
+    models:
+      - gpt-5.5-thinking
+
+tools:
+  - name: github
+    type: mcp
+    capabilities:
+      - repos.read
+      - prs.write
+
+agents:
+  - name: main-agent
+    type: router
+    instruction: "Route user requests to the best specialist agent."
+    skills:
+      - agent-routing
+    tools: []
+
+  - name: dev-agent
+    type: specialist
+    instruction: "Handle software engineering, infrastructure, GitHub, and deployment tasks."
+    skills:
+      - github-pr
+      - docker-ops
+    tools:
+      - github
