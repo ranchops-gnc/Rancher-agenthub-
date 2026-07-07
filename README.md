@@ -17,6 +17,26 @@ AgentHub 是一个**跨平台 AI 工具管理平台**，解决以下问题：
 | AI 工具之间无法协作 | 统一网关接入 |
 | Skill 库难以共享和复用 | 中央 Skill 资源库 |
 
+## 🧩 MVP（可运行）
+
+本仓库已提供可运行的 Agent Hub 垂直切片（FastAPI）：
+
+- 工作区创建
+- 模型 Provider 注册
+- Tool / MCP Server 连接
+- Agent 创建
+- 任务提交与运行执行
+- 运行事件查询与 SSE 事件流
+- 产物落盘与审计日志查询
+- YAML 配置标准 JSON Schema 校验
+
+参考文档：
+
+- [架构文档](./docs/architecture.md)
+- [API 文档说明](./docs/api.md)
+- [配置 Schema](./config/agent-workbench.schema.json)
+- [数据库初始化脚本](./db/migrations/001_init.sql)
+
 ---
 
 ## ✨ 四大核心模块
