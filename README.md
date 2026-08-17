@@ -1,197 +1,193 @@
-# AgentHub
+**AgentHub**
+A Unified Shared Ecosystem for AI Tools across Four Pillars: Skills, Agents, User Profiles, and Memory Systems
 
-> 统一 AI 工具的 Skill · Agent · 用户画像 · 记忆系统 四大共享生态
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
----
-
-## 🎯 这是什么？
-
-AgentHub 是一个**跨平台 AI 工具管理平台**，解决以下问题：
-
-| 问题 | 解决方案 |
-|------|----------|
-| 多个 AI 工具配置散落各处 | 中央化配置管理 |
-| 每换工具都要重新配置 | 一键部署脚本 |
-| AI 工具之间无法协作 | 统一网关接入 |
-| Skill 库难以共享和复用 | 中央 Skill 资源库 |
+License: MIT
 
 ---
 
-## ✨ 四大核心模块
+🎯 **What is AgentHub?**
+AgentHub is a cross-platform AI tool management system designed to solve the following challenges:
 
-### 1️⃣ Skill 库 — 一次编写，到处运行
+| Problem | Solution |
+| --- | --- |
+| AI tool configurations scattered across multiple places | Centralized configuration management |
+| Reconfiguring settings every time a new tool is adopted | One-click deployment script |
+| Lack of interoperability between different AI tools | Unified gateway access |
+| Difficulty sharing and reusing Skill libraries | Centralized Skill resource repository |
 
-| 特性 | 说明 |
-|------|------|
-| **统一格式** | YAML frontmatter + Markdown，工具无关 |
-| **跨平台兼容** | OpenClaw / OpenCode / Claude Code 通用 |
-| **依赖管理** | SemVer 版本控制，自动解析依赖 |
-| **触发词机制** | 智能匹配用户输入，自动加载 Skill |
+---
+
+✨ **Four Core Modules**
+
+**1️⃣ Skill Library — Write Once, Run Anywhere**
+
+| Feature | Description |
+| --- | --- |
+| Unified Format | YAML frontmatter + Markdown, vendor-agnostic |
+| Cross-Platform Compatibility | Universal support for OpenClaw / OpenCode / Claude Code |
+| Dependency Management | SemVer version control with automatic dependency resolution |
+| Trigger Words | Intelligent user input matching with automatic Skill loading |
 
 ```
 skills/
-├── github-pr/              # GitHub PR 管理
-├── browser-bridge/         # 浏览器自动化
-└── 50+ 共享 Skill
+├── github-pr/              # GitHub PR management
+├── browser-bridge/         # Browser automation
+└── 50+ shared Skills
+
 ```
 
-### 2️⃣ Agent 系统 — 专业角色，智能路由
+**2️⃣ Agent System — Specialized Roles, Intelligent Routing**
 
-| 特性 | 说明 |
-|------|------|
-| **类型定义** | Router（路由型）+ Specialist（专家型） |
-| **技能绑定** | 自动加载所需 Skills |
-| **记忆配置** | 短期/长期记忆策略可定制 |
+| Feature | Description |
+| --- | --- |
+| Type Definitions | Router + Specialist |
+| Skill Binding | Automatic loading of required Skills |
+| Memory Configuration | Customizable short-term/long-term memory strategies |
 
 ```
 agents/
-├── main-agent/             # 主路由入口
-├── dev-agent/              # 开发专家
-├── life-agent/             # 生活服务
-└── productivity-agent/     # 效率工具
+├── main-agent/             # Main routing entry point
+├── dev-agent/              # Development specialist
+├── life-agent/             # Life services
+└── productivity-agent/     # Productivity tools
+
 ```
 
-### 3️⃣ 用户画像 — 工具无关，永久携带
+**3️⃣ User Profile — Tool-Agnostic, Permanently Portable**
 
-| 特性 | 说明 |
-|------|------|
-| **统一格式** | YAML + Markdown，纯文本工具无关 |
-| **身份信息** | 基础资料、联系方式、社交账号 |
-| **偏好设置** | 审美偏好、沟通风格、回复习惯 |
+| Feature | Description |
+| --- | --- |
+| Unified Format | YAML + Markdown, plain text and tool-agnostic |
+| Identity Information | Basic details, contact info, social accounts |
+| Preferences | Aesthetic tastes, communication styles, response habits |
 
 ```
 profile/
-├── identity.yaml           # 身份信息
-├── skills.md              # 技能图谱
-└── contacts/              # 联系人
+├── identity.yaml           # Identity information
+├── skills.md              # Skill map
+└── contacts/              # Contacts
+
 ```
 
-### 4️⃣ 记忆系统 — 持久记忆，持续学习
+**4️⃣ Memory System — Persistent Memory, Continuous Learning**
 
-| 特性 | 说明 |
-|------|------|
-| **简化设计** | core + session + persist 三级（参考 Hermes） |
-| **核心记忆** | MEMORY.md + USER.md，永久保留 |
-| **会话记忆** | 运行时内存，定期归档 |
+| Feature | Description |
+| --- | --- |
+| Simplified Design | Three-tier structure: core + session + persist (inspired by Hermes) |
+| Core Memory | `MEMORY.md` + `USER.md`, retained permanently |
+| Session Memory | Runtime memory, archived periodically |
 
 ```
 memory/
-├── core/                   # 核心记忆（永久）
-│   ├── MEMORY.md          #   重要事实（用 § 分隔）
-│   └── USER.md            #   用户画像
-├── session/                # 会话记忆（运行时）
-└── persist/                # 持久化记忆（归档）
+├── core/                   # Core memory (permanent)
+│   ├── MEMORY.md          #   Key facts (delimited by §)
+│   └── USER.md            #   User profile
+├── session/                # Session memory (runtime)
+└── persist/                # Persistent memory (archived)
+
 ```
 
 ---
 
-## 🚀 快速安装
+🚀 **Quick Start**
 
-### 一键安装（推荐）
+**One-Click Installation (Recommended)**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/xuanyuanluoxue/AgentHub/main/misc/install.sh -o /tmp/install.sh && bash /tmp/install.sh
-```
-
-运行后显示菜单，选择操作：
-
-| 选项 | 说明 |
-|------|------|
-| `1` | 安装 AgentHub |
-| `2` | 更新 AgentHub |
-| `3` | 重新安装 |
-| `4` | 卸载 AgentHub |
-| `5` | 打开配置目录 |
-| `6` | 退出 |
-
-### 安装位置
 
 ```
-~/.agenthub/   # Linux/macOS/WSL
-```
 
-安装后运行 `agenthub --help` 查看帮助。
+After running, select an option from the menu:
+
+| Option | Description |
+| --- | --- |
+| 1 | Install AgentHub |
+| 2 | Update AgentHub |
+| 3 | Reinstall |
+| 4 | Uninstall AgentHub |
+| 5 | Open configuration directory |
+| 6 | Exit |
+
+**Installation Location**
+
+* `~/.agenthub/` (Linux / macOS / WSL)
+
+After installation, run `agenthub --help` to view help options.
 
 ---
 
-## 🤖 AI 接入指南
+🤖 **AI Integration Guide**
 
-将以下内容复制给 AI 阅读：
+Copy and paste the following prompt to your AI:
 
-```
-请先阅读 ~/.agenthub/AGENTS.md 了解 AgentHub 接入规范。
-```
+> Please read `~/.agenthub/AGENTS.md` first to understand the AgentHub integration guidelines.
 
-或者让 AI 执行以下步骤：
+Alternatively, instruct the AI to execute the following steps:
 
-1. 读取 `~/.agenthub/AGENTS.md` — AI 使用指南
-2. 读取 `~/.agenthub/agents/registry.json` — 检查是否已注册
-3. 读取 `~/.agenthub/memory/core/MEMORY.md` — 加载核心记忆
-4. 读取 `~/.agenthub/profile/identity.yaml` — 了解用户
+1. Read `~/.agenthub/AGENTS.md` — AI User Guide
+2. Read `~/.agenthub/agents/registry.json` — Check registration status
+3. Read `~/.agenthub/memory/core/MEMORY.md` — Load core memory
+4. Read `~/.agenthub/profile/identity.yaml` — Get user details
 
 ---
 
-## 📁 目录结构
+📁 **Directory Structure**
 
 ```
 ~/.agenthub/
-├── AGENTS.md              # ★ AI 使用指南
-├── README.md              # 本文件
+├── AGENTS.md              # ★ AI User Guide
+├── README.md              # This file
 │
-├── skills/                # Skill 库
-│   ├── 00-SKILL-SPEC.md  #   Skill 编写规范
-│   └── {skill}/          #   各 Skill 目录
+├── skills/                # Skill library
+│   ├── 00-SKILL-SPEC.md  #   Skill authoring specification
+│   └── {skill}/          #   Individual Skill directories
 │
-├── agents/                # Agent 配置
-│   ├── registry.json      #   Agent 注册表
-│   ├── router.md          #   路由规则
-│   └── {type}-agent.md   #   各 Agent 配置
+├── agents/                # Agent configurations
+│   ├── registry.json      #   Agent registry
+│   ├── router.md          #   Routing rules
+│   └── {type}-agent.md   #   Individual Agent configurations
 │
-├── memory/                # 记忆系统
-│   ├── core/              #   核心记忆
-│   ├── session/          #   会话记忆
-│   └── persist/          #   持久化记忆
+├── memory/                # Memory system
+│   ├── core/              #   Core memory
+│   ├── session/          #   Session memory
+│   └── persist/          #   Persistent memory
 │
-├── profile/               # 用户画像
-│   ├── identity.yaml      #   身份信息
-│   └── contacts/          #   联系人
+├── profile/               # User profile
+│   ├── identity.yaml      #   Identity information
+│   └── contacts/          #   Contacts
 │
-├── TODO/                  # 任务追踪
-│   ├── 00-TODO-SPEC.md   #   TODO 规范
-│   └── README.md          #   使用说明
+├── TODO/                  # Task tracking
+│   ├── 00-TODO-SPEC.md   #   TODO specification
+│   └── README.md          #   Usage instructions
 │
-├── secrets/               # 敏感信息（不提交 Git）
-└── docs/                  # 设计文档
+├── secrets/               # Sensitive credentials (excluded from Git)
+└── docs/                  # Design documentation
+
 ```
 
 ---
 
-## 📚 文档导航
+📚 **Documentation Navigation**
 
-| 文档 | 说明 |
-|------|------|
-| [AGENTS.md](./AGENTS.md) | **★ AI 必读** — AI 使用指南核心 |
-| [skills/00-SKILL-SPEC.md](./skills/00-SKILL-SPEC.md) | Skill 编写规范 |
-| [memory/SKILL.md](./memory/SKILL.md) | 记忆系统说明 |
-| [TODO/00-TODO-SPEC.md](./TODO/00-TODO-SPEC.md) | TODO 任务追踪规范 |
-
----
-
-## ⚠️ 隐私声明
-
-> AgentHub 是**公共开源模板项目**，不包含任何私人信息。
->
-> - 所有文档中的路径、账号、人名等均为**占位符**
-> - 如需使用，请基于模板创建你自己的配置
+| Document | Description |
+| --- | --- |
+| `AGENTS.md` | ★ Essential for AI — Core guide for AI usage |
+| `skills/00-SKILL-SPEC.md` | Skill authoring specification |
+| `memory/SKILL.md` | Memory system documentation |
+| `TODO/00-TODO-SPEC.md` | TODO task tracking specification |
 
 ---
 
-## 📄 License
+⚠️ **Privacy Notice**
+AgentHub is a public, open-source template project that contains no personal data.
 
+* All paths, accounts, and names used in the documentation serve strictly as placeholders.
+* To use this repository, please create your own configuration based on the provided template.
+
+---
+
+📄 **License**
 MIT License
 
----
-
-*愿景驱动，代码落地。*
+*Vision-driven, code-implemented.*
