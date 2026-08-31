@@ -1,0 +1,38 @@
+agents:
+  infrastructure-agent:
+    description: Manages Docker infrastructure and deployments.
+    model: provider/model-name
+    instructions:
+      - ./prompts/infrastructure.md
+    capabilities: [docker, deployment, monitoring]
+    tools: [docker-mcp, github, terminal]
+    memory:
+      workspace: true
+      long_term: true
+    permissions:
+      filesystem: workspace
+      network: restricted
+      shell: approval_required
+    delegation:
+      allowed_agents: [security-agent, coding-agent]
+    fallback:
+      models: [provider/fallback-model]
+      retries: 2
+      cooldown: 60s
+
+workflows:
+  deploy-application:
+    trigger: manual
+    steps:
+      - agent: coding-agent
+        action: validate_repository
+      - parallel:
+          - agent: security-agent
+            action: security_review
+          - agent: test-agent
+            action: run_tests
+      - approval:
+          required: true
+          role: administrator
+      - agent: infrastructure-agent
+        action: deploy_application
